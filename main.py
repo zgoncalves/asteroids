@@ -1,5 +1,5 @@
 import pygame
-from constants import SCREEN_WIDTH, SCREEN_HEIGHT
+from constants import *
 from logger import log_state
 from circleshape import *
 from player import *
@@ -23,6 +23,7 @@ def main():
             log_state()
             screen.fill("black")
             my_player.draw(screen)
+            my_player.update(dt)
             pygame.display.flip()
             dt = clock.tick(60) / 1000
             if event.type == pygame.QUIT:
